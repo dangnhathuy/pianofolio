@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/pianofolio/static/css/main.18e3c909.css",
+    "main.js": "/pianofolio/static/js/main.12ad531d.js",
+    "static/js/787.2b915d62.chunk.js": "/pianofolio/static/js/787.2b915d62.chunk.js",
+    "static/media/Scarbo.mp3": "/pianofolio/static/media/Scarbo.28439228af528baafb42.mp3",
+    "static/media/Ondine.mp3": "/pianofolio/static/media/Ondine.922da4d464d615585eab.mp3",
+    "static/media/Le Gibet.mp3": "/pianofolio/static/media/Le Gibet.efdeab97b4beaf04274e.mp3",
+    "static/media/ulysses.jpg": "/pianofolio/static/media/ulysses.a150f28c9e67035fc48d.jpg",
+    "static/media/ponyo.jpg": "/pianofolio/static/media/ponyo.3596fb1e62fe3bc17b2e.jpg",
+    "static/media/demon.jpg": "/pianofolio/static/media/demon.d064f1b6804c381a974d.jpg",
+    "static/media/Poppins-Light.ttf": "/pianofolio/static/media/Poppins-Light.7641a0f76ca9ef6c252c.ttf",
+    "static/media/Poppins-Medium.ttf": "/pianofolio/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
+    "static/media/gibet.jpg": "/pianofolio/static/media/gibet.103fc0033edfb2cc1ec1.jpg",
+    "static/media/Gloock-Regular.ttf": "/pianofolio/static/media/Gloock-Regular.46f1cea90d1c899f7c6e.ttf",
+    "static/media/UnicaOne-Regular.ttf": "/pianofolio/static/media/UnicaOne-Regular.1684ee52c054f4c9598b.ttf",
+    "index.html": "/pianofolio/index.html",
+    "main.18e3c909.css.map": "/pianofolio/static/css/main.18e3c909.css.map",
+    "main.12ad531d.js.map": "/pianofolio/static/js/main.12ad531d.js.map",
+    "787.2b915d62.chunk.js.map": "/pianofolio/static/js/787.2b915d62.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18e3c909.css",
+    "static/js/main.12ad531d.js"
+  ]
+}
