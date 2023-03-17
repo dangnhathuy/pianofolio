@@ -55,6 +55,11 @@ const ContactText = styled(Text)`
     margin: 10px;
     max-width: 600px;
   }
+
+  @media (max-width: 650px) {
+    margin: 10px;
+    max-width: 400px;
+  }
 `;
 
 const ContentContainer = styled.div`

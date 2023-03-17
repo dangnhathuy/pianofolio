@@ -91,9 +91,7 @@ const Arrow = styled.div`
   @media (max-width: 1012px) {
     font-size: 17px;
   }
-  @media (max-width: 768px) {
-    font-size: 13px;
-  }
+
 `
 
 const TrackName = styled.p`
@@ -114,10 +112,6 @@ margin: 0;
   width: 80px;
 }
 
-@media (max-width: 768px) {
-  font-size: 12px;
-  width: 65px;
-}
 
 
 `
