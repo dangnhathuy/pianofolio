@@ -39,7 +39,7 @@ const SectionMainContainer = styled.div`
 
 const ContactHeading = styled.h2`
   font-family: var(--unicaone);
-  font-size: clamp(100px, 10vw, 165px);
+  font-size: clamp(80px, 10vw, 165px);
   margin: 16px 16px 0;
   max-width: 400px;
   line-height: 0.85;
@@ -48,6 +48,8 @@ const ContactHeading = styled.h2`
   @media (max-width: 1250px) {
     margin: 0;
   }
+
+
 `;
 
 const ContactText = styled(Text)`
