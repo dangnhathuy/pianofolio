@@ -92,8 +92,8 @@ const VolumeSlider = styled.input.attrs({ type: 'range' })`
     cursor: pointer;
 
     @media (max-width: 768px) {
-      max-width: 7px;
-      max-height: 7px;
+      max-width: 10px;
+      max-height: 10px;
     }
   }
 
@@ -102,6 +102,7 @@ const VolumeSlider = styled.input.attrs({ type: 'range' })`
   }
   @media (max-width: 768px) {
     width: 90px;
+    height: 4px;
   }
 `;
 
