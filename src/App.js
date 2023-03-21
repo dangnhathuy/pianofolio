@@ -93,7 +93,7 @@ const App = () => {
   
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [trackIndex, isPlaying, isMute, volume, audioRef]);
+  }, [trackIndex, isPlaying, isMute, audioRef]);
 
 
   useEffect(() => {
