@@ -33,6 +33,11 @@ const SectionMainContainer = styled.div`
   flex-direction: row;
   align-items: flex-end;
   margin: 0 1em;
+  @media (max-width: 1250px) {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
 `;
 
 const ContactHeading = styled.h2`
@@ -62,7 +67,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   @media (max-width: 1250px) {
-    flex-wrap: wrap;
+    align-self: flex-start;
   }
 `;
 
