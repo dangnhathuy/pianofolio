@@ -14,7 +14,7 @@ const SubHeading = styled.h2`
   font-size: var(--subheading);
   line-height: 0.8;
   margin: ${(props) => props.margin || '0'};
-
+  max-width: ${(props) => props.maxWidth || ''};
   text-align: ${(props) => props.textAlign || ''};
   animation: ${(props) => props.animation || ''}; 
 `

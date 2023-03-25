@@ -89,8 +89,9 @@ const Footer = ({ trackIndex }) => {
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
-  margin: 1em;
+  margin: 5px 30px 5px;
 
   @media (max-width: 1250px) {
     margin: 15px 10px 10px 10px;
