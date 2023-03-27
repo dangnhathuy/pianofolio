@@ -59,36 +59,41 @@ const App = () => {
   
     // Update the background opacity based on the scroll position
     const handleScroll = () => {
-      const { innerHeight, scrollY } = window;
+      const { innerWidth, innerHeight, scrollY } = window;
       const heroHeight = document.getElementById('hero').offsetHeight;
       const aboutHeight = document.getElementById('about').offsetHeight;
       const projectsHeight = document.getElementById('projects').offsetHeight;
       const totalHeight = heroHeight + aboutHeight + projectsHeight;
-  
-      if (innerHeight + scrollY >= heroBg.offsetHeight) {
-        heroBg.style.top = '-33%';
-        heroBg.style.position = 'fixed';
-      } else {
-        heroBg.style.top = '0';
-        heroBg.style.position = 'absolute';
-      }
-  
-      if (innerHeight + scrollY >= heroHeight) {
-        heroBg.style.opacity = 1 - scrollY / 800;
-      }
-  
-      if (heroBg.style.opacity <= 0) {
+      if (innerWidth <= 600) {
         heroBg.style.display = 'none';
+        contactBg.style.display = 'none';
       } else {
-        heroBg.style.display = 'block';
+        if (innerHeight + scrollY >= heroBg.offsetHeight) {
+          heroBg.style.top = '-33%';
+          heroBg.style.position = 'fixed';
+        } else {
+          heroBg.style.top = '0';
+          heroBg.style.position = 'absolute';
+        }
+    
+        if (innerHeight + scrollY >= heroHeight) {
+          heroBg.style.opacity = 1 - scrollY / 800;
+        }
+    
+        if (heroBg.style.opacity <= 0) {
+          heroBg.style.display = 'none';
+        } else {
+          heroBg.style.display = 'block';
+        }
+    
+        if (innerHeight + scrollY >= totalHeight) {
+          const bgOpacity = (innerHeight + scrollY - totalHeight) / (document.body.offsetHeight - totalHeight);
+          contactBg.style.opacity = bgOpacity;
+        } else {
+          contactBg.style.opacity = 0;
+        }
       }
-  
-      if (innerHeight + scrollY >= totalHeight) {
-        const bgOpacity = (innerHeight + scrollY - totalHeight) / (document.body.offsetHeight - totalHeight);
-        contactBg.style.opacity = bgOpacity;
-      } else {
-        contactBg.style.opacity = 0;
-      }
+ 
     };
   
     window.addEventListener('scroll', handleScroll);
