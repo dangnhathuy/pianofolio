@@ -19,7 +19,7 @@ const Hero = ({ trackIndex }) => {
             maxWidth='540px'
             animation = 'translateXToLeft 1600ms ease-out forwards'
             >
-              I AM A SELF TAUGHT FRONT-END WEB DEVELOPER.
+              I AM A FRONT-END WEB DEVELOPER.
               I AM CURRENTLY IN MY SECOND YEAR AT YORK UNIVERSITY STUDYING COMPUTER SCIENCE.
               I LOVE NATURE, COFFEE, AND CLASSICAL MUSIC.
           </HeroText>
