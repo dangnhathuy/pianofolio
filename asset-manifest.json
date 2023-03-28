@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pianofolio/static/css/main.f5fc3d74.css",
-    "main.js": "/pianofolio/static/js/main.386d8e2d.js",
+    "main.js": "/pianofolio/static/js/main.e632fdb1.js",
     "static/js/787.2b915d62.chunk.js": "/pianofolio/static/js/787.2b915d62.chunk.js",
     "static/media/Scarbo.mp3": "/pianofolio/static/media/Scarbo.28439228af528baafb42.mp3",
     "static/media/Ondine.mp3": "/pianofolio/static/media/Ondine.922da4d464d615585eab.mp3",
@@ -16,11 +16,11 @@
     "static/media/UnicaOne-Regular.ttf": "/pianofolio/static/media/UnicaOne-Regular.1684ee52c054f4c9598b.ttf",
     "index.html": "/pianofolio/index.html",
     "main.f5fc3d74.css.map": "/pianofolio/static/css/main.f5fc3d74.css.map",
-    "main.386d8e2d.js.map": "/pianofolio/static/js/main.386d8e2d.js.map",
+    "main.e632fdb1.js.map": "/pianofolio/static/js/main.e632fdb1.js.map",
     "787.2b915d62.chunk.js.map": "/pianofolio/static/js/787.2b915d62.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f5fc3d74.css",
-    "static/js/main.386d8e2d.js"
+    "static/js/main.e632fdb1.js"
   ]
 }
