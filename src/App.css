@@ -1,42 +1,17 @@
-@font-face {
-  font-family: 'UnicaOne';
-  src: url(/src/fonts/UnicaOne-Regular.ttf);
-  }
-
-@font-face {
-    font-family: 'OpenSans';
-    src: url(/src/fonts/Poppins-Medium.ttf);
-    font-weight: 400;
-  }
-
-@font-face {
-      font-family: 'OpenSans';
-      src: url(/src/fonts/Poppins-Light.ttf);
-      font-weight: 200;
-  }
-
-  @font-face {
-    font-family: 'Gloock';
-    src: url(/src/fonts/Gloock-Regular.ttf);
-    font-weight: 200;
-}
-  
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 :root {
+  font-family: 'Poppins', sans-serif;
   background-color: rgb(30, 0, 71);
   color: white;
   
   /* colors */
   --blue: #1a74df;
-
-  /* font families */
-  --unicaone: 'UnicaOne';
-  --opensans: 'OpenSans', sans-serif;
-  --gloock: 'Gloock';
   
   /* font sizes */
   --big-heading: clamp(100px, 15vw, 300px);
-  --subheading: clamp(80px, 7vw, 150px);
+  --subheading: clamp(60px, 7vw, 130px);
+  --slightly-bigger-text: clamp(20px, 3vw, 45px);
   --text: clamp(15px, 2vw, 30px);
   --smaller-text: clamp(18px, 1.5vw, 20px);
   --smallest-text: clamp(15px, 1vw, 18px);
@@ -54,12 +29,13 @@ body {
 
 #hero-background{
   display: block;
-  position: absolute;
+  opacity: 1;
+  position: fixed;
   z-index: -1;
   margin: 0;
   object-fit: cover;
   width: 100%;
-  height: 133%;
+  height: 100%;
 
 }
 
@@ -71,20 +47,10 @@ body {
   margin: 0;
   object-fit: cover;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   opacity: 0;
 }
 
-@media only screen and (max-width: 600px) {
-  #hero-background{
-    display: none;
-  
-  }
-  
-  #contact-background {
-    display: none;
-  }
-}
 
 #tsparticles {
   position: absolute;

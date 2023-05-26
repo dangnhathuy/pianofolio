@@ -44,13 +44,16 @@ const Credits = ({ trackIndex, isOpen, toggleCredits }) => {
               Music:
             </Text>
             <Text fontSize='var( --smaller-text)' margin = '1em 0.5em'>
-              GASPARD DE LA NUIT, MAURICE RAVEL
+              DEBUSSY PRELUDES / BOOK 1, L.117
             </Text>
             <Text fontSize='var( --smallest-text)' margin = '0.5em 1em'>
-              I. Ondine, II. Le Gibet - Performed by Louis Lortie
+              I. 8. La fille aux cheveux de lin
             </Text>
             <Text fontSize='var( --smallest-text)' margin = '0.5em 1em'>
-              III. Scarbo - Performed by Benjamin Grovsner
+              II. 12. Minstrels
+            </Text>
+            <Text fontSize='var( --smallest-text)' margin = '0.5em 1em'>
+              III. 5. Les collines d'Anacapri
             </Text>
           </ContentContainer>
         </CreditsContainer>

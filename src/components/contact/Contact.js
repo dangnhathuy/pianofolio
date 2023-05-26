@@ -1,24 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import Footer from './Footer';
-import ponyo from '../../images/ondine/ponyo.jpg';
-import { Text } from '../reusable-components/Texts';
+import { Text, SubHeading } from '../reusable-components/Texts';
 
 const Contact = ({ trackIndex }) => {
 
   return (
     <>
-      <img id="contact-background" src={ponyo} alt="ponyo"/>
       <SectionMainContainer id="contact"> 
         <TextContainer>
-          <ContactHeading>LET'S CONNECT</ContactHeading>
+          <SubHeading maxWidth="500px">LET'S CONNECT</SubHeading>
           <ContactText
-            margin="10px 0 40px 15px"
+            margin="30px 0 30px 12px"
             maxWidth="30%"
             animation="translateYDown 900ms ease-out forwards"
+            lineHeight="1.3"
           >
-            I'M ALWAYS INTERESTED ABOUT OPPORTUNITIES TO WORK ON CHALLENGING AND
-            EXCITING WEB PROJECTS. 
+            I'm always interested in opportunities to work on challenging and exciting web projects 😎 
           </ContactText>
         </TextContainer>
         <Footer trackIndex={trackIndex} />
@@ -32,33 +30,19 @@ const SectionMainContainer = styled.div`
   height: 100vh;
   flex-direction: row;
   align-items: flex-end;
-  margin: 0 1em;
+  margin: 0 0 0 2em;
   @media (max-width: 1250px) {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    margin: 0 1em;
   }
-`;
-
-const ContactHeading = styled.h2`
-  font-family: var(--unicaone);
-  font-size: clamp(80px, 10vw, 165px);
-  margin: 5px;
-  max-width: 400px;
-  line-height: 0.85;
-  animation: translateYDown 700ms ease-out forwards;
-
-  @media (max-width: 1250px) {
-    margin: 0;
-  }
-
-
 `;
 
 const ContactText = styled(Text)`
   max-width: 500px;
   @media (max-width: 1250px) {
-    margin: 10px;
+    margin: 20px 5px;
   }
 `;
 

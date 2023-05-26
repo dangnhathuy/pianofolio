@@ -1,27 +1,22 @@
 import {React, useState, useEffect, useRef, useCallback} from 'react';
-import styled from 'styled-components';
 import './App.css';
 
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-import Header from './components/Header';
-import AudioPlayer from './components/audioplayer/AudioPlayer';
+import Header from './components/header/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/contact/Contact';
 
-import { GiMusicalScore } from 'react-icons/gi';
-
 import tracks from './tracks';
 
 const App = () => {
-  const [showAudio, setShowAudio] = useState("initial");
   const [trackIndex, setTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMute, setIsMute] = useState(false);
-  const [volume, setVolume] = useState(0.5);
+  const [volume, setVolume] = useState(0.7);
 
   const audioRef = useRef(new Audio(tracks[trackIndex].audio));
   const volumeRef = useRef(null);
@@ -38,8 +33,41 @@ const App = () => {
       await console.log(container);
   }, []);
 
+  const changeTrack = () => {
+    const newIndex = trackIndex === 2 ? 0 : trackIndex + 1;
+    setTrackIndex(newIndex);
+    console.log(trackIndex);
+    document.documentElement.style.scrollBehavior = "auto";
+    window.location.replace('#');
+    setTimeout(() => {
+      document.documentElement.style.scrollBehavior = "smooth";
+    }, 300) 
+  }
+
   useEffect(() => {
-    // Update the audio player with the current track and volume
+    // Update the background based on the current track
+    const heroBg = document.getElementById('hero-background');
+
+    // Update the background opacity based on the scroll position
+    const handleScroll = () => {
+      const { innerHeight, scrollY } = window;
+      const heroHeight = document.getElementById('hero').offsetHeight;
+
+        if (innerHeight + scrollY >= heroHeight) {
+          heroBg.style.opacity = 1 - scrollY / 800;
+          if (heroBg.style.opacity <= 0) {
+            heroBg.style.display = 'none';
+          } else {
+            heroBg.style.display = 'block';
+          }
+        }
+    }; 
+   
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll); 
+  }, []);
+
+  useEffect(() => {
     const audioPlayer = audioRef.current;
     audioPlayer.pause();
     audioPlayer.src = tracks[trackIndex].audio;
@@ -47,59 +75,7 @@ const App = () => {
     if (isPlaying) {
       audioPlayer.play();
     }
-  
-    // Update the background based on the current track
-    const heroBg = document.getElementById('hero-background');
-    const contactBg = document.getElementById('contact-background');
-    if (trackIndex !== 0) {
-      contactBg.style.display = "none";
-    } else {
-      contactBg.style.display = "block";
-    }
-  
-    // Update the background opacity based on the scroll position
-    const handleScroll = () => {
-      const { innerWidth, innerHeight, scrollY } = window;
-      const heroHeight = document.getElementById('hero').offsetHeight;
-      const aboutHeight = document.getElementById('about').offsetHeight;
-      const projectsHeight = document.getElementById('projects').offsetHeight;
-      const totalHeight = heroHeight + aboutHeight + projectsHeight;
-      if (innerWidth <= 600) {
-        heroBg.style.display = 'none';
-        contactBg.style.display = 'none';
-      } else {
-        if (innerHeight + scrollY >= heroBg.offsetHeight) {
-          heroBg.style.top = '-33%';
-          heroBg.style.position = 'fixed';
-        } else {
-          heroBg.style.top = '0';
-          heroBg.style.position = 'absolute';
-        }
-    
-        if (innerHeight + scrollY >= heroHeight) {
-          heroBg.style.opacity = 1 - scrollY / 800;
-        }
-    
-        if (heroBg.style.opacity <= 0) {
-          heroBg.style.display = 'none';
-        } else {
-          heroBg.style.display = 'block';
-        }
-    
-        if (innerHeight + scrollY >= totalHeight) {
-          const bgOpacity = (innerHeight + scrollY - totalHeight) / (document.body.offsetHeight - totalHeight);
-          contactBg.style.opacity = bgOpacity;
-        } else {
-          contactBg.style.opacity = 0;
-        }
-      }
- 
-    };
-  
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [trackIndex, isPlaying, isMute, audioRef]);
-
+  }, [trackIndex]);
 
   useEffect(() => {
       if (isPlaying) {
@@ -108,7 +84,6 @@ const App = () => {
           audioRef.current.pause();
         }
   }, [isPlaying]);
-
 
   useEffect(() => {
       audioRef.current.volume = volume;
@@ -135,23 +110,26 @@ const App = () => {
           element.removeEventListener('wheel', handleWheel);
         };
       }
-}, [volume]);
+  }, [volume]);
 
-
-useEffect(() => {
-  if (isMute)
-    audioRef.current.volume = 0;
-  else
-  audioRef.current.volume = volume;
-}, [volume, isMute]);
 
   useEffect(() => {
+    if (isMute)
+      audioRef.current.volume = 0;
+    else
+    audioRef.current.volume = volume;
+  }, [isMute]);
 
-  }, []);
 
-  const toggleAudio = () => {
-    setShowAudio(showAudio === "initial" ?  false : showAudio ? false : true );
-  }
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    audio.addEventListener('ended', changeTrack);
+
+    return () => {
+      audio.removeEventListener('ended', changeTrack);
+    };
+  }, [changeTrack]);
 
   return (
     <>
@@ -190,7 +168,7 @@ useEffect(() => {
                 },
                 particles: {
                     color: {
-                        value: tracks[trackIndex].color2,
+                        value: '#ffffff',
                     },
                     links: {
                         color: "#001129",
@@ -232,23 +210,9 @@ useEffect(() => {
                 detectRetina: true,
             }}
         />
-        <AudioIcon 
-          color={isPlaying ? tracks[trackIndex].color2 : ''}
-          hoverColor={tracks[trackIndex].color2}
-          visibility={showAudio === 'initial' ? 'hidden' : showAudio ? 'hidden' : 'visibile'}
-          opacity={showAudio === 'initial' ? '0' : showAudio ? '0' : '1'}
-          animation={
-            showAudio === 'initial' ? 'fadeInDelay 2000ms ease-out forwards' : 
-            showAudio ? 'fadeOut 1000ms ease-out' : 'fadeIn 1000ms ease-out'
-          }
-          onClick={toggleAudio}
-          backgroundColor = {tracks[trackIndex].color1bg}
-          >
-          <GiMusicalScore />
-        </AudioIcon>
-        <AudioPlayer 
+        <Header
           trackIndex={trackIndex}
-          setTrackIndex={setTrackIndex}
+          changeTrack={changeTrack}
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
           isMute={isMute}
@@ -256,45 +220,13 @@ useEffect(() => {
           volume={volume}
           setVolume={setVolume}
           volumeRef={volumeRef}
-          showAudio={showAudio}
-          toggleAudio={toggleAudio}
         />
-        <Header trackIndex={trackIndex}/>
         <Hero trackIndex={trackIndex}/>
-        <About id="about"/>
+        <About trackIndex={trackIndex} id="about"/>
         <Projects id="projects"/>
         <Contact id="contact" trackIndex={trackIndex}/>
     </>
   );
 };
-
-const AudioIcon = styled.div`
-  position: fixed;
-  z-index: 2;
-  font-size: 27px;
-  width: 35px;
-  height: 35px;
-
-  top: 90px;
-  right: 30px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2px;
-  backdrop-filter: blur(5px);
-
-  background-color: ${(props) => props.backgroundColor || 'rgba(0, 25, 61, 0.8)'};
-  color: ${(props) => props.color || ''};
-  visibility: ${(props) => props.visibility || ''};
-  opacity: ${(props) => props.opacity || ''};
-  animation: ${(props) => props.animation || ''};
-
-  transition: all 0.3s ease-out;
-  cursor: pointer;
-  &:hover {
-    color: ${(props) => props.hoverColor || 'var(--blue)'};
-  }
- `
 
 export default App;

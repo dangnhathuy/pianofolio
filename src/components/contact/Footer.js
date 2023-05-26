@@ -18,7 +18,7 @@ const pages = [
 
   {
       text: 'INSTAGRAM', 
-      destination: 'https://www.instagram.com/ravelenjoyer',
+      destination: 'https://www.instagram.com/nhathd03',
       animation: 'translateXToRight 800ms ease-out forwards'
   },
 

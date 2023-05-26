@@ -14,14 +14,14 @@ const Hero = ({ trackIndex }) => {
         <BigHeading animation = 'translateXToRight 1200ms ease-out forwards'>HUY DANG</BigHeading>
  
           <HeroText 
-            margin='1em 1em 1.5em' 
+            margin='1em 1em 1.5em'
+            lineHeight="1.3" 
             textAlign='right'
             maxWidth='540px'
             animation = 'translateXToLeft 1600ms ease-out forwards'
             >
-              I AM A FRONT-END WEB DEVELOPER.
-              I AM CURRENTLY IN MY SECOND YEAR AT YORK UNIVERSITY STUDYING COMPUTER SCIENCE.
-              I LOVE NATURE, COFFEE, AND CLASSICAL MUSIC.
+              Hello, I'm a second year Computer Science student at York University. 
+              I love classical music and web development :)
           </HeroText>
 
       </ContentContainer>
