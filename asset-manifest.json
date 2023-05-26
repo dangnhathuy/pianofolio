@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pianofolio/static/css/main.2c08b8b5.css",
+    "main.css": "/pianofolio/static/css/main.152d1788.css",
     "main.js": "/pianofolio/static/js/main.ea48c118.js",
     "static/js/787.2b915d62.chunk.js": "/pianofolio/static/js/787.2b915d62.chunk.js",
     "static/media/track1.mp3": "/pianofolio/static/media/track1.92d90edba0e5487bc33a.mp3",
@@ -10,12 +10,12 @@
     "static/media/sunset.jpg": "/pianofolio/static/media/sunset.7976e6641a73b67e91d0.jpg",
     "static/media/goosewell.png": "/pianofolio/static/media/goosewell.8cb33054e6829589424b.png",
     "index.html": "/pianofolio/index.html",
-    "main.2c08b8b5.css.map": "/pianofolio/static/css/main.2c08b8b5.css.map",
+    "main.152d1788.css.map": "/pianofolio/static/css/main.152d1788.css.map",
     "main.ea48c118.js.map": "/pianofolio/static/js/main.ea48c118.js.map",
     "787.2b915d62.chunk.js.map": "/pianofolio/static/js/787.2b915d62.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c08b8b5.css",
+    "static/css/main.152d1788.css",
     "static/js/main.ea48c118.js"
   ]
 }
