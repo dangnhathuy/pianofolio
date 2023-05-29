@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const BigHeading = styled.h2`
   font-size: var(--big-heading);
   margin: 1rem;
-  max-width: 900px;
+  max-width: 400px;
   line-height: 0.85;
   animation: ${(props) => props.animation || ''}; 
 `
@@ -19,7 +19,7 @@ const SubHeading = styled.h2`
 
 const Text = styled.p`
   font-size: ${(props) => props.fontSize || 'var(--text)'};
-  font-weight: ${(props) => props.fontWeight || ''};
+  font-weight: ${(props) => props.fontWeight || '200'};
   line-height: ${(props) => props.lineHeight || '1.1'};
   margin: ${(props) => props.margin || ''};
   text-indent: ${(props) => props.textIndent || ''};

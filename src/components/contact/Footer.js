@@ -70,14 +70,16 @@ const Footer = ({ trackIndex }) => {
                           </Link>  
                         ))
                       }
+
                   </LinksContainer>
+ 
             </NavContainer>
             <Link 
-              animation='translateXToLeft 1000ms ease-out forwards' 
-              color = {tracks[trackIndex].color2} 
-              onClick = {() => toggleCredits()}
-              >
-                CREDITS
+                        animation='translateXToLeft 1000ms ease-out forwards' 
+                        color = {tracks[trackIndex].color2} 
+                        onClick = {() => toggleCredits()}
+                      >
+                        CREDITS
             </Link>  
           </FooterContainer>
           <Credits trackIndex={trackIndex} isOpen={isOpen} toggleCredits={toggleCredits}/>
@@ -94,7 +96,7 @@ const MainContainer = styled.div`
   margin: 5px 30px 5px;
 
   @media (max-width: 1250px) {
-    margin: 15px 10px 10px 10px;
+    margin: 0;
   }
 `
 
@@ -102,7 +104,7 @@ const FooterContainer = styled.footer`
   backdrop-filter: blur(2px);
   font-weight: 200;
 
-  height: 5em;
+  padding: 1em 0;
  
   display: flex;
   align-items: center;
@@ -121,6 +123,7 @@ const NavContainer = styled.nav`
   flex-direction: row;
   justify-content: flex-end;
 
+
 `
 
 const LinksContainer = styled.div`
@@ -128,9 +131,11 @@ const LinksContainer = styled.div`
   flex-direction: row;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 `
 
 const Link = styled.a`
+  font-size: var(--smallest-text);
   display: flex;
   flex-direction: row;
   padding: 0.5em;

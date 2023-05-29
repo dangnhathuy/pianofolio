@@ -9,12 +9,12 @@
   --blue: #1a74df;
   
   /* font sizes */
-  --big-heading: clamp(100px, 15vw, 300px);
-  --subheading: clamp(60px, 7vw, 130px);
-  --slightly-bigger-text: clamp(20px, 3vw, 45px);
-  --text: clamp(15px, 2vw, 30px);
-  --smaller-text: clamp(18px, 1.5vw, 20px);
-  --smallest-text: clamp(15px, 1vw, 18px);
+  --big-heading: clamp(80px, 10vw, 200px);
+  --subheading: clamp(50px, 6vw, 100px);
+  --bigger-text: clamp(20px, 2vw, 45px);
+  --slightly-bigger-text: clamp(15px, 2vw, 30px);
+  --text: clamp(12px, 1.5vw, 20px);
+  --smallest-text: clamp(12px, 1vw, 18px);
   
 }
 
@@ -31,35 +31,11 @@ body {
   display: block;
   opacity: 1;
   position: fixed;
-  z-index: -1;
+  z-index: 0;
   margin: 0;
   object-fit: cover;
-  width: 100%;
+  width: 100vw;
   height: 100%;
-
-  @media (max-width: 1600px) {
-    height: 110%;
-  }
-}
-
-
-
-#contact-background {
-  display: block;
-  position: fixed;
-  top: 0;
-  z-index: -1;
-  margin: 0;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-}
-
-
-#tsparticles {
-  position: absolute;
-  z-index: -33;
 }
 
 @keyframes translateXToLeft {

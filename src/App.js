@@ -1,9 +1,6 @@
 import {React, useState, useEffect, useRef, useCallback} from 'react';
 import './App.css';
 
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-
 import Header from './components/header/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -21,23 +18,12 @@ const App = () => {
   const audioRef = useRef(new Audio(tracks[trackIndex].audio));
   const volumeRef = useRef(null);
   
-  const particlesInit = useCallback(async engine => {
-    console.log(engine);
-    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    await loadFull(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(async container => {
-      await console.log(container);
-  }, []);
-
   const changeTrack = () => {
     const newIndex = trackIndex === 2 ? 0 : trackIndex + 1;
     setTrackIndex(newIndex);
     console.log(trackIndex);
     document.documentElement.style.scrollBehavior = "auto";
+
     window.location.replace('#');
     setTimeout(() => {
       document.documentElement.style.scrollBehavior = "smooth";
@@ -45,22 +31,24 @@ const App = () => {
   }
 
   useEffect(() => {
-    // Update the background based on the current track
-    const heroBg = document.getElementById('hero-background');
 
     // Update the background opacity based on the scroll position
     const handleScroll = () => {
-      const { innerHeight, scrollY } = window;
+      const heroBg = document.getElementById('hero-background');
+      const { innerHeight, innerWidth, scrollY } = window;
       const heroHeight = document.getElementById('hero').offsetHeight;
-
+      if (innerWidth <= 600) {
+        heroBg.style.display = 'none';
+      } else {
         if (innerHeight + scrollY >= heroHeight) {
           heroBg.style.opacity = 1 - scrollY / 800;
-          if (heroBg.style.opacity <= 0) {
-            heroBg.style.display = 'none';
-          } else {
-            heroBg.style.display = 'block';
-          }
         }
+        if (heroBg.style.opacity <= 0) {
+          heroBg.style.display = 'none';
+        } else {
+          heroBg.style.display = 'block';
+        }
+      }
     }; 
    
     window.addEventListener('scroll', handleScroll);
@@ -132,84 +120,7 @@ const App = () => {
   }, [changeTrack]);
 
   return (
-    <>
-     <Particles
-            id="tsparticles"
-            init={particlesInit}
-            loaded={particlesLoaded}
-            options={{
-                background: {
-                    color: {
-                        value: tracks[trackIndex].color1,
-                    },
-                },
-                fpsLimit: 120,
-                interactivity: {
-                    events: {
-                        onClick: {
-                            enable: false,
-                            mode: "push",
-                        },
-                        onHover: {
-                            enable: false,
-                            mode: "repulse",
-                        },
-                        resize: true,
-                    },
-                    modes: {
-                        push: {
-                            quantity: 4,
-                        },
-                        repulse: {
-                            distance: 200,
-                            duration: 0.4,
-                        },
-                    },
-                },
-                particles: {
-                    color: {
-                        value: '#ffffff',
-                    },
-                    links: {
-                        color: "#001129",
-                        distance: 150,
-                        enable: false,
-                        opacity: 1,
-                        width: 1,
-                    },
-                    collisions: {
-                        enable: true,
-                    },
-                    move: {
-                        directions: "none",
-                        enable: true,
-                        outModes: {
-                            default: "bounce",
-                        },
-                        random: false,
-                        speed: 1,
-                        straight: false,
-                    },
-                    number: {
-                        density: {
-                            enable: false,
-                            area: 400,
-                        },
-                        value: 20,
-                    },
-                    opacity: {
-                        value: 0.5,
-                    },
-                    shape: {
-                        type: "circle",
-                    },
-                    size: {
-                        value: { min: 1, max: 3 },
-                    },
-                },
-                detectRetina: true,
-            }}
-        />
+    <div style={{backgroundColor: tracks[trackIndex].color1}}>
         <Header
           trackIndex={trackIndex}
           changeTrack={changeTrack}
@@ -225,7 +136,7 @@ const App = () => {
         <About trackIndex={trackIndex} id="about"/>
         <Projects id="projects"/>
         <Contact id="contact" trackIndex={trackIndex}/>
-    </>
+    </div>
   );
 };
 

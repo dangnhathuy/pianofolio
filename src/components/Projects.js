@@ -16,7 +16,13 @@ const About = () => {
         <SubHeading textAlign = 'center' animation='translateYDown 700ms ease-out forwards'>
           PROJECTS
         </SubHeading >
-        <Text textAlign = 'center' animation='translateYDown 900ms ease-out forwards'>Coming soon...</Text>
+        <Text 
+         fontSize='var(--slightly-bigger-text)'
+         textAlign = 'center' 
+         animation='translateYDown 900ms ease-out forwards'
+         >
+          Coming soon...
+        </Text>
     </SectionMainContainer>
     </>
     );

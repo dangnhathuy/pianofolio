@@ -25,7 +25,7 @@ const About = ({trackIndex}) => {
             <SubHeading animation='translateYDown 900ms ease-out forwards'>ABOUT</SubHeading>
             <Text 
               animation='translateYDown 1100ms ease-out forwards' 
-              margin='15px 5px 35px 3px' 
+              margin='15px 5px 15px 3px' 
               lineHeight='1.5'
               fontWeight='200'
               >
@@ -38,7 +38,7 @@ const About = ({trackIndex}) => {
               <>
                 <Text
                 color={tracks[trackIndex].color2}
-                fontSize="var(--slightly-bigger-text)"
+                fontSize="var(--bigger-text)"
                 margin="0"
                 >
                   {category.subtitle} 

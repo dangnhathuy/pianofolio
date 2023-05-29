@@ -87,6 +87,10 @@ const HeaderContainer = styled.header`
   position: fixed;
   z-index: 1;
   top: 0;
+
+  @media only screen and (max-width: 768px) {
+    height: 60px;
+  }
 `
 
 const MainHeader = styled.div`

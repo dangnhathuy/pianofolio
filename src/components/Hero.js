@@ -14,6 +14,7 @@ const Hero = ({ trackIndex }) => {
         <BigHeading animation = 'translateXToRight 1200ms ease-out forwards'>HUY DANG</BigHeading>
  
           <HeroText 
+            fontSize='var(--slightly-bigger-text)'
             margin='1em 1em 1.5em'
             lineHeight="1.3" 
             textAlign='right'
@@ -50,10 +51,10 @@ const ContentContainer = styled.div`
 `
 
 const HeroText = styled(Text)`
-  @media (max-width: 1012px) {
-    text-align: left;
-    margin: 0 25px 2em;
-  }
+@media (max-width: 1002px) {
+  text-align: left;
+  margin: 0em 2em 2em 2em;
+}
 `
 
 

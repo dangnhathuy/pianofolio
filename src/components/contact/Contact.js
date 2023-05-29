@@ -12,7 +12,7 @@ const Contact = ({ trackIndex }) => {
           <SubHeading maxWidth="500px">LET'S CONNECT</SubHeading>
           <ContactText
             margin="30px 0 30px 12px"
-            maxWidth="30%"
+            maxWidth="500px"
             animation="translateYDown 900ms ease-out forwards"
             lineHeight="1.3"
           >
@@ -40,9 +40,8 @@ const SectionMainContainer = styled.div`
 `;
 
 const ContactText = styled(Text)`
-  max-width: 500px;
   @media (max-width: 1250px) {
-    margin: 20px 5px;
+    margin: 10px 5px;
   }
 `;
 
