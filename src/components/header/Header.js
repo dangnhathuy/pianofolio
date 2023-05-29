@@ -143,6 +143,11 @@ const Button = styled.button`
     &:hover {
       color: ${(props) => props.color || 'var(--blue)'};
   }
+
+  @media (max-width: 600px) {
+    font-size: 25px;
+    padding: 0;
+  }
 `
 
 
