@@ -12,6 +12,7 @@ import tracks from './tracks';
 const App = () => {
   const [trackIndex, setTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [isMute, setIsMute] = useState(false);
   const [volume, setVolume] = useState(0.7);
 
@@ -32,6 +33,7 @@ const App = () => {
 
   useEffect(() => {
     // Update the background opacity based on the scroll position
+    console.log(window.innerWidth);
     const handleScroll = () => {
       const heroBg = document.getElementById('hero-background');
       const { innerHeight, innerWidth, scrollY } = window;

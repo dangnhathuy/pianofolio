@@ -8,7 +8,7 @@ const Hero = ({ trackIndex }) => {
 
     return(
     <>
-    <img id="hero-background" src={tracks[trackIndex].hero} alt="background"/>
+    <BackgroundImage id="hero-background" src={tracks[trackIndex].hero} alt="background"/>
     <SectionMainContainer id = "hero">
       <ContentContainer>
         <BigHeading animation = 'translateXToRight 1200ms ease-out forwards'>HUY DANG</BigHeading>
@@ -56,6 +56,19 @@ const HeroText = styled(Text)`
   margin: 0em 2em 2em 1.5em;
 }
 `
+const BackgroundImage = styled.img`
+display: block;
+opacity: 1;
+position: fixed;
+z-index: 0;
+margin: 0;
+object-fit: cover;
+width: 100vw;
+height: 100%;
 
+@media (max-width: 600px) {
+  display: none;
+}
+`
 
 export default Hero;
