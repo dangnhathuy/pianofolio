@@ -31,7 +31,6 @@ const App = () => {
   }
 
   useEffect(() => {
-
     // Update the background opacity based on the scroll position
     const handleScroll = () => {
       const heroBg = document.getElementById('hero-background');

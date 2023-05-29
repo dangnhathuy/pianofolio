@@ -53,7 +53,7 @@ const ContentContainer = styled.div`
 const HeroText = styled(Text)`
 @media (max-width: 1002px) {
   text-align: left;
-  margin: 0em 2em 2em 2em;
+  margin: 0em 2em 2em 1.5em;
 }
 `
 
