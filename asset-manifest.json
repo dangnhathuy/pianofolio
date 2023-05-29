@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pianofolio/static/css/main.cbed8982.css",
-    "main.js": "/pianofolio/static/js/main.c2cd5cef.js",
+    "main.css": "/pianofolio/static/css/main.4e779163.css",
+    "main.js": "/pianofolio/static/js/main.9aa5312a.js",
     "static/js/787.2b915d62.chunk.js": "/pianofolio/static/js/787.2b915d62.chunk.js",
     "static/media/track1.mp3": "/pianofolio/static/media/track1.92d90edba0e5487bc33a.mp3",
     "static/media/track2.mp3": "/pianofolio/static/media/track2.7da5ffcf060b3e4bdec6.mp3",
@@ -10,12 +10,12 @@
     "static/media/sunset.jpg": "/pianofolio/static/media/sunset.7976e6641a73b67e91d0.jpg",
     "static/media/goosewell.png": "/pianofolio/static/media/goosewell.8cb33054e6829589424b.png",
     "index.html": "/pianofolio/index.html",
-    "main.cbed8982.css.map": "/pianofolio/static/css/main.cbed8982.css.map",
-    "main.c2cd5cef.js.map": "/pianofolio/static/js/main.c2cd5cef.js.map",
+    "main.4e779163.css.map": "/pianofolio/static/css/main.4e779163.css.map",
+    "main.9aa5312a.js.map": "/pianofolio/static/js/main.9aa5312a.js.map",
     "787.2b915d62.chunk.js.map": "/pianofolio/static/js/787.2b915d62.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbed8982.css",
-    "static/js/main.c2cd5cef.js"
+    "static/css/main.4e779163.css",
+    "static/js/main.9aa5312a.js"
   ]
 }
